@@ -1,9 +1,56 @@
 const bookList = document.getElementById('bookList');
 const addBtn = document.querySelector('.add');
-const parent = document.querySelector('.parent');
 
 // Create a collection to store books
 let books = [];
+
+// Function to save the collection to localStorage
+function saveBooks() {
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+function removeBook(index) {
+  // Remove the book from the collection using the index
+  books = books.filter((_, i) => i !== index);
+
+  // Save collection to localStorage
+  saveBooks();
+
+  // Display the books
+  displayBooks();
+}
+
+// Function to display all books
+function displayBooks() {
+  // Clear the book list to not reapet the code twice
+  bookList.innerHTML = '';
+
+  // Display each book in the collection
+  books.forEach((book, index) => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `${book.title} <br> ${book.author}`;
+
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('removeButtonStyle');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', () => {
+      removeBook(index);
+    });
+
+    listItem.appendChild(removeButton);
+    // insert evey thing befor the input fields
+    bookList.insertBefore(listItem, bookList.firstChild);
+  });
+}
+
+// Function to load the collection from localStorage
+function loadBooks() {
+  const storedBooks = localStorage.getItem('books');
+  if (storedBooks) {
+    books = JSON.parse(storedBooks);
+    displayBooks();
+  }
+}
 
 // Function to add a new book to the collection
 function addBook() {
@@ -21,8 +68,8 @@ function addBook() {
 
   // Create a new book object
   const book = {
-    title: title,
-    author: author
+    title,
+    author,
   };
 
   // Add to the collection
@@ -36,55 +83,7 @@ function addBook() {
   displayBooks();
 }
 
-function removeBook(index) {
-  // Remove the book from the collection using the index
-  books = books.filter((_, i) => i !== index);
-
-  // Save collection to localStorage
-  saveBooks();
-
-  // Display the books
-  displayBooks();
-}
-
-// Function to display all books
-function displayBooks() {
-  // Clear the book list to not reapet the code twice 
-  bookList.innerHTML = '';
-
-  // Display each book in the collection
-  books.forEach((book, index) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `${book.title} <br> ${book.author}`;
-
-    const removeButton = document.createElement('button');
-    removeButton.classList.add('removeButtonStyle')
-    removeButton.textContent = 'Remove';
-    removeButton.addEventListener('click', () => {
-      removeBook(index);
-    });
-
-      listItem.appendChild(removeButton);
-        // insert evey thing befor the input fields
-      bookList.insertBefore(listItem, bookList.firstChild);
-  });
-}
-
-addBtn.addEventListener('click', addBook)
-
-// Function to save the collection to localStorage
-function saveBooks() {
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
-// Function to load the collection from localStorage
-function loadBooks() {
-  const storedBooks = localStorage.getItem('books');
-  if (storedBooks) {
-    books = JSON.parse(storedBooks);
-    displayBooks();
-  }
-}
+addBtn.addEventListener('click', addBook);
 
 // Load the books from localStorage on page load
 loadBooks();

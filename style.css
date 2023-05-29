@@ -55,7 +55,7 @@ li {
   flex-direction: column;
   justify-content: space-between;
   height: 12vh;
-  border-bottom: 1px solid gray ;
+  border-bottom: 1px solid gray;
   padding-bottom: 15px;
   padding-top: 10px;
 }
