@@ -50,6 +50,7 @@ li {
   height: 12vh;
   border-bottom: 1px solid black ;
   padding-bottom: 15px;
+  padding-top: 10px;
 }
 
 .removeButtonStyle {
