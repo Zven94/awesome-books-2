@@ -9,13 +9,12 @@ body {
 
 .parent {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-around;
 }
 
-.bookListStyle {
+.bookListStyle {  
   padding: 0;
   list-style: none;
   display: flex;
@@ -24,12 +23,14 @@ body {
   height: 10vh;
 }
 
-.titleInput {
-  width: 30%;
+#titleInput {
+  width: fit-content;
+  margin-bottom: 10px;
 }
 
-.authorInput {
-  width: 30%;
+#authorInput {
+  width: fit-content;
+  margin-bottom: 10px;
 }
 
 .add {
