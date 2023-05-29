@@ -24,11 +24,11 @@ body {
   height: 10vh;
 }
 
-.bookListInput-1 {
+.titleInput {
   width: 30%;
 }
 
-.bookListInput-2 {
+.authorInput {
   width: 30%;
 }
 
