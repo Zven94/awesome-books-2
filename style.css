@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 body {
@@ -7,33 +9,44 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
 .parent {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-around;
 }
 
 .bookListStyle {
+  position: relative;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 10vh;
+  height: auto;
 }
 
-.bookListInput-1 {
-  width: 30%;
+.list-container {
+  position: relative;
 }
 
-.bookListInput-2 {
-  width: 30%;
+#titleInput {
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+#authorInput {
+  width: fit-content;
+  margin-bottom: 10px;
 }
 
 .add {
   width: fit-content;
+  padding: 5px 10px;
 }
 
 li {
@@ -42,10 +55,12 @@ li {
   flex-direction: column;
   justify-content: space-between;
   height: 12vh;
-  border-bottom: 1px solid black ;
+  border-bottom: 1px solid gray;
   padding-bottom: 15px;
+  padding-top: 10px;
 }
 
 .removeButtonStyle {
   width: fit-content;
+  padding: 5px 10px;
 }
