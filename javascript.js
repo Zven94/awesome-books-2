@@ -55,9 +55,10 @@ function displayBooks() {
   // Display each book in the collection
   books.forEach((book, index) => {
     const listItem = document.createElement('li');
-    listItem.textContent = `${book.title} by ${book.author}`;
+    listItem.innerHTML = `${book.title} <br> ${book.author}`;
 
     const removeButton = document.createElement('button');
+    removeButton.classList.add('removeButtonStyle')
     removeButton.textContent = 'Remove';
     removeButton.addEventListener('click', () => {
       removeBook(index);
