@@ -14,13 +14,18 @@ body {
   justify-content: space-around;
 }
 
-.bookListStyle {  
+.bookListStyle {
+  position: relative;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 10vh;
+  height: auto;
+}
+
+.list-container {
+  position: relative;
 }
 
 #titleInput {
