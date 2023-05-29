@@ -1,66 +1,61 @@
 * {
   box-sizing: border-box;
-  font-size: 16px;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 body {
-  margin: 0 0 0 10px;
+  margin: 0;
   padding: 0;
-}
-
-h1 {
-  font-size: 2.5rem;
 }
 
 .parent {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
+  padding-left: 2em;
 }
 
-.bookListStyle {
-  position: relative;
-  padding: 0;
+h1 {
+  font-size: 2.6rem;
+}
+
+#bookList {
   list-style: none;
+  padding-left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: auto;
 }
 
-.list-container {
-  position: relative;
+li {
+  margin: 0.6em 0;
+  border-bottom: 1px solid gray;
+  padding-bottom: 14px;
 }
 
-#titleInput {
-  width: fit-content;
-  margin-bottom: 10px;
-}
-
+#titleInput,
 #authorInput {
-  width: fit-content;
-  margin-bottom: 10px;
+  max-width: 24em;
+  margin-bottom: 1em;
+  padding: 0.4em 0;
+  border-radius: 4px;
+  border: 1px solid gray;
 }
 
 .add {
   width: fit-content;
-  padding: 5px 10px;
-}
-
-li {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 12vh;
-  border-bottom: 1px solid gray;
-  padding-bottom: 15px;
-  padding-top: 10px;
+  padding: 0.4em 1.2em;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid gray;
 }
 
 .removeButtonStyle {
-  width: fit-content;
-  padding: 5px 10px;
+  display: block;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-top: 0.4em;
 }
