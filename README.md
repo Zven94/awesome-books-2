@@ -62,7 +62,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 Hello World <a name="about-project"></a>
 
-> this is bootstrap project i have created using HTML, CSS, bootstrap, linters
+> this is Awesome books project we have created using HTML, CSS, Javascript, linters
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -178,7 +178,7 @@ coming soon!
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-Implement React lib to create SPA
+> we are going to add navigation to the app very soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -196,8 +196,6 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
 If you like this project don't forgt to give a star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -205,8 +203,6 @@ If you like this project don't forgt to give a star
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
 
 I would like to thank Microvesre who helped us during our journey
 
