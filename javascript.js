@@ -20,15 +20,10 @@ class BookCollection {
     this.bookList.innerHTML = '';
 
     this.books.forEach((book, index) => {
+      console.log(index)
       const listItem = document.createElement('li');
-      const listItemH2 = document.createElement('h2');
-      listItem.appendChild(listItemH2);
-      // create an specific css class to alternate the style of the list
-
-      if (index % 2 !== 0) {
-        listItem.classList.add('makeMeGrey');
-      }
-      listItemH2.innerHTML = `"${book.title}" by ${book.author}`;
+      
+      listItem.innerHTML = `${book.title} <br> ${book.author}`;
 
       const removeButton = document.createElement('button');
       removeButton.classList.add('removeButtonStyle');
