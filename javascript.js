@@ -1,86 +1,79 @@
-const bookList = document.getElementById('bookList');
-const addBtn = document.querySelector('.add');
+class BookCollection {
+  static initialize() {
+    const bookCollection = new BookCollection();
+    return bookCollection;
+  }
 
-// Create a collection to store books
-let books = [];
+  constructor() {
+    this.bookList = document.getElementById('bookList');
+    this.addBtn = document.querySelector('.add');
+    this.books = [];
+    this.loadBooks();
+    this.addBtn.addEventListener('click', () => this.addBook());
+  }
 
-function saveBooks() {
-  localStorage.setItem('books', JSON.stringify(books));
-}
+  saveBooks() {
+    localStorage.setItem('books', JSON.stringify(this.books));
+  }
 
-// Function to display all books
-function displayBooks() {
-  // Clear the book list to not repeat the code twice
-  bookList.innerHTML = '';
+  displayBooks() {
+    this.bookList.innerHTML = '';
 
-  // Display each book in the collection
-  books.forEach((book, index) => {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `${book.title} <br> ${book.author}`;
+    this.books.forEach((book, index) => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `${book.title} <br> ${book.author}`;
 
-    const removeButton = document.createElement('button');
-    removeButton.classList.add('removeButtonStyle');
-    removeButton.textContent = 'Remove';
-    removeButton.addEventListener('click', () => {
-      // Remove the book from the collection
-      books.splice(index, 1);
+      const removeButton = document.createElement('button');
+      removeButton.classList.add('removeButtonStyle');
+      removeButton.textContent = 'Remove';
+      removeButton.addEventListener('click', () => {
+        this.removeBook(index);
+      });
 
-      // Save collection to localStorage
-      saveBooks();
-
-      // Display the updated books
-      displayBooks();
+      listItem.appendChild(removeButton);
+      this.bookList.insertBefore(listItem, this.bookList.firstChild);
     });
-
-    listItem.appendChild(removeButton);
-    // Insert everything before the input fields
-    bookList.insertBefore(listItem, bookList.firstChild);
-  });
-}
-
-// Function to add a new book to the collection
-function addBook() {
-  // Get the input values
-  const titleInput = document.getElementById('titleInput');
-  const authorInput = document.getElementById('authorInput');
-  const title = titleInput.value;
-  const author = authorInput.value;
-
-  // Check if both inputs are filled
-  if (title === '' || author === '') {
-    alert('Please enter both the title and author.');
-    return;
   }
 
-  // Create a new book object
-  const book = {
-    title,
-    author,
-  };
+  addBook() {
+    const titleInput = document.getElementById('titleInput');
+    const authorInput = document.getElementById('authorInput');
+    const title = titleInput.value;
+    const author = authorInput.value;
 
-  // Add to the collection
-  books.push(book);
+    if (title === '' || author === '') {
+      alert('Please enter both the title and author.');
+      return;
+    }
 
-  saveBooks();
+    const book = {
+      title,
+      author,
+    };
 
-  titleInput.value = '';
-  authorInput.value = '';
+    this.books.push(book);
 
-  displayBooks();
-}
+    this.saveBooks();
 
-// Function to save the collection to localStorage
+    titleInput.value = '';
+    authorInput.value = '';
 
-// Function to load the collection from localStorage
-function loadBooks() {
-  const storedBooks = localStorage.getItem('books');
-  if (storedBooks) {
-    books = JSON.parse(storedBooks);
-    displayBooks();
+    this.displayBooks();
+  }
+
+  removeBook(index) {
+    this.books.splice(index, 1);
+    this.saveBooks();
+    this.displayBooks();
+  }
+
+  loadBooks() {
+    const storedBooks = localStorage.getItem('books');
+    if (storedBooks) {
+      this.books = JSON.parse(storedBooks);
+      this.displayBooks();
+    }
   }
 }
 
-addBtn.addEventListener('click', addBook);
-
-// Load the books from localStorage on page load
-loadBooks();
+BookCollection.initialize();
