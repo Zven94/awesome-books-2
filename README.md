@@ -178,6 +178,8 @@ coming soon!
 
 ## 🔭 Future Features <a name="future-features"></a>
 
+- we are going to add navigation to the app very soon
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
