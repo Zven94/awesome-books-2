@@ -28,7 +28,7 @@ class BookCollection {
       if (index % 2 !== 0) {
         listItem.classList.add('makeMeGrey');
       }
-      listItem.innerHTML = `${book.title} <br> ${book.author}`;
+      listItem.innerHTML = `${book.title} by ${book.author}`;
 
       const removeButton = document.createElement('button');
       removeButton.classList.add('removeButtonStyle');
