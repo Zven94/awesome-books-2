@@ -19,7 +19,8 @@ body {
   padding-left: 2em;
 }
 
-h1,h3 {
+h1,
+h3 {
   font-size: 2.6rem;
 }
 
@@ -81,5 +82,5 @@ hr {
 /* intercalate and change the style of the half of the books tittles  */
 
 .makeMeGrey {
-  background-color:lightgrey ;
+  background-color: lightgrey;
 }
