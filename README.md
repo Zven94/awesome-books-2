@@ -171,12 +171,14 @@ coming soon!
 
 👤 Nicolas
 
-- GitHub: [@githubhandle](https://github.com/Zven94)
+- GitHub: [@Zven94](https://github.com/Zven94)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
+
+Implement React lib to create SPA
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
