@@ -178,8 +178,6 @@ coming soon!
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-Implement React lib to create SPA
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
