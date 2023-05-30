@@ -62,7 +62,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 Hello World <a name="about-project"></a>
 
-> this is bootstrap project i have created using HTML, CSS, bootstrap, linters
+> this is Awesome books project we have created using HTML, CSS, Javascript , linters
 
 ## 🛠 Built With <a name="built-with"></a>
 
