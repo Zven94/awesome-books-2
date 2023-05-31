@@ -21,7 +21,7 @@ body {
 
 .nav h4 {
   animation-name: flip;
-  animation-duration: 1.2s;
+  animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: running;
@@ -32,10 +32,14 @@ body {
 @keyframes flip {
   0% {
     opacity: 0.2;
+    transform: scale(-1.1);
   }
 
   100% {
     opacity: 1;
+    font-weight: 800;
+    transform: scale(1.2);
+    color: rgb(255, 60, 0);
   }
 }
 
@@ -52,6 +56,19 @@ a {
 a:hover {
   font-size: 1.25em;
   color: orangered;
+}
+
+#bookList li {
+  margin: 4px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#nav li:not(:last-child) {
+  border-right: 3px solid black;
+  padding: 0 0.4em;
 }
 
 .parent {
@@ -83,14 +100,6 @@ h3 {
   min-width: 70%;
   align-items: center;
   margin-top: 2em;
-}
-
-#bookList li {
-  margin: 4px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
 }
 
 h2 {
